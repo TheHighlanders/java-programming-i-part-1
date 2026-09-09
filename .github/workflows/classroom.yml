@@ -26,115 +26,299 @@ jobs:
       - name: Warm the Maven cache
         run: mvn -B -q -DskipTests install
 
-      - name: SpeedingTicket
+      - name: "01 Sandbox"
+        id: ex01
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: "01 Sandbox"
+          command: mvn -B -q -pl 'part01-Part01_01.Sandbox' test
+          timeout: 5
+          max-score: 1
+      - name: "02 Ada Lovelace"
+        id: ex02
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: "02 Ada Lovelace"
+          command: mvn -B -q -pl 'part01-Part01_02.AdaLovelace' test
+          timeout: 5
+          max-score: 1
+      - name: "03 Once Upon a Time"
+        id: ex03
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: "03 Once Upon a Time"
+          command: mvn -B -q -pl 'part01-Part01_03.OnceUponATime' test
+          timeout: 5
+          max-score: 1
+      - name: "04 Dinosaur"
+        id: ex04
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: "04 Dinosaur"
+          command: mvn -B -q -pl 'part01-Part01_04.Dinosaur' test
+          timeout: 5
+          max-score: 1
+      - name: "05 Message"
+        id: ex05
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: "05 Message"
+          command: mvn -B -q -pl 'part01-Part01_05.Message' test
+          timeout: 5
+          max-score: 1
+      - name: "06 Hi Ada Lovelace!"
+        id: ex06
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: "06 Hi Ada Lovelace!"
+          command: mvn -B -q -pl 'part01-Part01_06.HiAdaLovelace' test
+          timeout: 5
+          max-score: 1
+      - name: "07 Message Three Times"
+        id: ex07
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: "07 Message Three Times"
+          command: mvn -B -q -pl 'part01-Part01_07.MessageThreeTimes' test
+          timeout: 5
+          max-score: 1
+      - name: "08 Greeting"
+        id: ex08
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: "08 Greeting"
+          command: mvn -B -q -pl 'part01-Part01_08.Greeting' test
+          timeout: 5
+          max-score: 1
+      - name: "09 Conversation"
+        id: ex09
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: "09 Conversation"
+          command: mvn -B -q -pl 'part01-Part01_09.Conversation' test
+          timeout: 5
+          max-score: 1
+      - name: "10 Story"
+        id: ex10
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: "10 Story"
+          command: mvn -B -q -pl 'part01-Part01_10.Story' test
+          timeout: 5
+          max-score: 1
+      - name: "11 Various Variables"
+        id: ex11
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: "11 Various Variables"
+          command: mvn -B -q -pl 'part01-Part01_11.VariousVariables' test
+          timeout: 5
+          max-score: 1
+      - name: "12 Integer Input"
+        id: ex12
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: "12 Integer Input"
+          command: mvn -B -q -pl 'part01-Part01_12.IntegerInput' test
+          timeout: 5
+          max-score: 1
+      - name: "13 Double Input"
+        id: ex13
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: "13 Double Input"
+          command: mvn -B -q -pl 'part01-Part01_13.DoubleInput' test
+          timeout: 5
+          max-score: 1
+      - name: "14 Boolean Input"
+        id: ex14
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: "14 Boolean Input"
+          command: mvn -B -q -pl 'part01-Part01_14.BooleanInput' test
+          timeout: 5
+          max-score: 1
+      - name: "15 Different Types of Input"
+        id: ex15
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: "15 Different Types of Input"
+          command: mvn -B -q -pl 'part01-Part01_15.DifferentTypesOfInput' test
+          timeout: 5
+          max-score: 1
+      - name: "16 Seconds in a day"
+        id: ex16
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: "16 Seconds in a day"
+          command: mvn -B -q -pl 'part01-Part01_16.SecondsInADay' test
+          timeout: 5
+          max-score: 1
+      - name: "17 Sum of two numbers"
+        id: ex17
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: "17 Sum of two numbers"
+          command: mvn -B -q -pl 'part01-Part01_17.SumOfTwoNumbers' test
+          timeout: 5
+          max-score: 1
+      - name: "18 Sum of three numbers"
+        id: ex18
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: "18 Sum of three numbers"
+          command: mvn -B -q -pl 'part01-Part01_18.SumOfThreeNumbers' test
+          timeout: 5
+          max-score: 1
+      - name: "19 Addition formula"
+        id: ex19
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: "19 Addition formula"
+          command: mvn -B -q -pl 'part01-Part01_19.AdditionFormula' test
+          timeout: 5
+          max-score: 1
+      - name: "20 Multiplication formula"
+        id: ex20
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: "20 Multiplication formula"
+          command: mvn -B -q -pl 'part01-Part01_20.MultiplicationFormula' test
+          timeout: 5
+          max-score: 1
+      - name: "21 Average of two numbers"
+        id: ex21
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: "21 Average of two numbers"
+          command: mvn -B -q -pl 'part01-Part01_21.AverageOfTwoNumbers' test
+          timeout: 5
+          max-score: 1
+      - name: "22 Average of three numbers"
+        id: ex22
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: "22 Average of three numbers"
+          command: mvn -B -q -pl 'part01-Part01_22.AverageOfThreeNumbers' test
+          timeout: 5
+          max-score: 1
+      - name: "23 Simple calculator"
+        id: ex23
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: "23 Simple calculator"
+          command: mvn -B -q -pl 'part01-Part01_23.SimpleCalculator' test
+          timeout: 5
+          max-score: 1
+      - name: "24 Speeding Ticket"
         id: ex24
         uses: classroom-resources/autograding-command-grader@v1
         with:
-          test-name: SpeedingTicket
+          test-name: "24 Speeding Ticket"
           command: mvn -B -q -pl 'part01-Part01_24.SpeedingTicket' test
           timeout: 5
           max-score: 1
-      - name: CheckYourIndentation
+      - name: "25 Check Your Indentation"
         id: ex25
         uses: classroom-resources/autograding-command-grader@v1
         with:
-          test-name: CheckYourIndentation
+          test-name: "25 Check Your Indentation"
           command: mvn -B -q -pl 'part01-Part01_25.CheckYourIndentation' test
           timeout: 5
           max-score: 1
-      - name: Orwell
+      - name: "26 Orwell"
         id: ex26
         uses: classroom-resources/autograding-command-grader@v1
         with:
-          test-name: Orwell
+          test-name: "26 Orwell"
           command: mvn -B -q -pl 'part01-Part01_26.Orwell' test
           timeout: 5
           max-score: 1
-      - name: Ancient
+      - name: "27 Ancient"
         id: ex27
         uses: classroom-resources/autograding-command-grader@v1
         with:
-          test-name: Ancient
+          test-name: "27 Ancient"
           command: mvn -B -q -pl 'part01-Part01_27.Ancient' test
           timeout: 5
           max-score: 1
-      - name: Positivity
+      - name: "28 Positivity"
         id: ex28
         uses: classroom-resources/autograding-command-grader@v1
         with:
-          test-name: Positivity
+          test-name: "28 Positivity"
           command: mvn -B -q -pl 'part01-Part01_28.Positivity' test
           timeout: 5
           max-score: 1
-      - name: Adulthood
+      - name: "29 Adulthood"
         id: ex29
         uses: classroom-resources/autograding-command-grader@v1
         with:
-          test-name: Adulthood
+          test-name: "29 Adulthood"
           command: mvn -B -q -pl 'part01-Part01_29.Adulthood' test
           timeout: 5
           max-score: 1
-      - name: LargerThanOrEqualTo
+      - name: "30 Larger Than or Equal To"
         id: ex30
         uses: classroom-resources/autograding-command-grader@v1
         with:
-          test-name: LargerThanOrEqualTo
+          test-name: "30 Larger Than or Equal To"
           command: mvn -B -q -pl 'part01-Part01_30.LargerThanOrEqualTo' test
           timeout: 5
           max-score: 1
-      - name: GradesAndPoints
+      - name: "31 Grades and Points"
         id: ex31
         uses: classroom-resources/autograding-command-grader@v1
         with:
-          test-name: GradesAndPoints
+          test-name: "31 Grades and Points"
           command: mvn -B -q -pl 'part01-Part01_31.GradesAndPoints' test
           timeout: 5
           max-score: 1
-      - name: OddOrEven
+      - name: "32 Odd or even"
         id: ex32
         uses: classroom-resources/autograding-command-grader@v1
         with:
-          test-name: OddOrEven
+          test-name: "32 Odd or even"
           command: mvn -B -q -pl 'part01-Part01_32.OddOrEven' test
           timeout: 5
           max-score: 1
-      - name: Password
+      - name: "33 Password"
         id: ex33
         uses: classroom-resources/autograding-command-grader@v1
         with:
-          test-name: Password
+          test-name: "33 Password"
           command: mvn -B -q -pl 'part01-Part01_33.Password' test
           timeout: 5
           max-score: 1
-      - name: Same
+      - name: "34 Same"
         id: ex34
         uses: classroom-resources/autograding-command-grader@v1
         with:
-          test-name: Same
+          test-name: "34 Same"
           command: mvn -B -q -pl 'part01-Part01_34.Same' test
           timeout: 5
           max-score: 1
-      - name: CheckingTheAge
+      - name: "35 Checking the age"
         id: ex35
         uses: classroom-resources/autograding-command-grader@v1
         with:
-          test-name: CheckingTheAge
+          test-name: "35 Checking the age"
           command: mvn -B -q -pl 'part01-Part01_35.CheckingTheAge' test
           timeout: 5
           max-score: 1
-      - name: LeapYear
+      - name: "36 Leap year"
         id: ex36
         uses: classroom-resources/autograding-command-grader@v1
         with:
-          test-name: LeapYear
+          test-name: "36 Leap year"
           command: mvn -B -q -pl 'part01-Part01_36.LeapYear' test
           timeout: 5
           max-score: 1
-      - name: GiftTax
+      - name: "37 Gift tax"
         id: ex37
         uses: classroom-resources/autograding-command-grader@v1
         with:
-          test-name: GiftTax
+          test-name: "37 Gift tax"
           command: mvn -B -q -pl 'part01-Part01_37.GiftTax' test
           timeout: 5
           max-score: 1
@@ -142,6 +326,29 @@ jobs:
       - name: Autograding Reporter
         uses: classroom-resources/autograding-grading-reporter@v1
         env:
+          EX01_RESULTS: "${{ steps.ex01.outputs.result }}"
+          EX02_RESULTS: "${{ steps.ex02.outputs.result }}"
+          EX03_RESULTS: "${{ steps.ex03.outputs.result }}"
+          EX04_RESULTS: "${{ steps.ex04.outputs.result }}"
+          EX05_RESULTS: "${{ steps.ex05.outputs.result }}"
+          EX06_RESULTS: "${{ steps.ex06.outputs.result }}"
+          EX07_RESULTS: "${{ steps.ex07.outputs.result }}"
+          EX08_RESULTS: "${{ steps.ex08.outputs.result }}"
+          EX09_RESULTS: "${{ steps.ex09.outputs.result }}"
+          EX10_RESULTS: "${{ steps.ex10.outputs.result }}"
+          EX11_RESULTS: "${{ steps.ex11.outputs.result }}"
+          EX12_RESULTS: "${{ steps.ex12.outputs.result }}"
+          EX13_RESULTS: "${{ steps.ex13.outputs.result }}"
+          EX14_RESULTS: "${{ steps.ex14.outputs.result }}"
+          EX15_RESULTS: "${{ steps.ex15.outputs.result }}"
+          EX16_RESULTS: "${{ steps.ex16.outputs.result }}"
+          EX17_RESULTS: "${{ steps.ex17.outputs.result }}"
+          EX18_RESULTS: "${{ steps.ex18.outputs.result }}"
+          EX19_RESULTS: "${{ steps.ex19.outputs.result }}"
+          EX20_RESULTS: "${{ steps.ex20.outputs.result }}"
+          EX21_RESULTS: "${{ steps.ex21.outputs.result }}"
+          EX22_RESULTS: "${{ steps.ex22.outputs.result }}"
+          EX23_RESULTS: "${{ steps.ex23.outputs.result }}"
           EX24_RESULTS: "${{ steps.ex24.outputs.result }}"
           EX25_RESULTS: "${{ steps.ex25.outputs.result }}"
           EX26_RESULTS: "${{ steps.ex26.outputs.result }}"
@@ -157,4 +364,4 @@ jobs:
           EX36_RESULTS: "${{ steps.ex36.outputs.result }}"
           EX37_RESULTS: "${{ steps.ex37.outputs.result }}"
         with:
-          runners: ex24,ex25,ex26,ex27,ex28,ex29,ex30,ex31,ex32,ex33,ex34,ex35,ex36,ex37
+          runners: ex01,ex02,ex03,ex04,ex05,ex06,ex07,ex08,ex09,ex10,ex11,ex12,ex13,ex14,ex15,ex16,ex17,ex18,ex19,ex20,ex21,ex22,ex23,ex24,ex25,ex26,ex27,ex28,ex29,ex30,ex31,ex32,ex33,ex34,ex35,ex36,ex37
