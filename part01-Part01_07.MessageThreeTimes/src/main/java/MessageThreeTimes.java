@@ -8,23 +8,6 @@
  * must print the user's string three times (you can use the
  * `System.out.println` command multiple times).
  *
- * The exercise template already includes the code that creates the `Scanner`
- * tool.
- *
- * ```java
- * import java.util.Scanner;
- *
- * public class MessageThreeTimes {
- *
- *     public static void main(String[] args) {
- *         Scanner scanner = new Scanner(System.in);
- *
- *         System.out.println("Write a message: ");
- *         // Write your program here
- *     }
- * }
- * ```
- *
  * Example output for when the user writes the string "Hi".
  *
  * Example run (you type the lines marked >):

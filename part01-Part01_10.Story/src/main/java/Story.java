@@ -26,22 +26,6 @@
  *     On the way to work, Bob reflected on life.
  *     Perhaps Bob will not be a builder forever.
  *
- * The exercise template already includes the code that creates the `Scanner`
- * tool.
- *
- * ```java
- * import java.util.Scanner;
- *
- * public class Story {
- *
- *     public static void main(String[] args) {
- *         Scanner scanner = new Scanner(System.in);
- *
- *         // Write your program here
- *     }
- * }
- * ```
- *
  * Here's another example output:
  *
  * Example run:

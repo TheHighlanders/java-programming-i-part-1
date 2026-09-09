@@ -3,17 +3,6 @@
  *
  * Lesson: https://java-programming.mooc.fi/part-1/1-starting-programming/
  *
- * The exercise template already contains the following template of code:
- *
- * ```java
- * public class Sandbox {
- *     public static void main(String[] args) {
- *         // Write your program here
- *
- *     }
- * }
- * ```
- *
  * The line "// Write your program here" is a line comment, and the computer
  * will ignore it when executing the program.
  *

@@ -18,22 +18,6 @@
  *     Oh, how interesting. Tell me more!
  *   > Just went shopping.
  *     Thanks for sharing!
- *
- * The exercise template already includes the code that creates the `Scanner`
- * tool.
- *
- * ```java
- * import java.util.Scanner;
- *
- * public class Conversation {
- *
- *     public static void main(String[] args) {
- *         Scanner scanner = new Scanner(System.in);
- *
- *         //Write your program here
- *     }
- * }
- * ```
  */
 
 import java.util.Scanner;

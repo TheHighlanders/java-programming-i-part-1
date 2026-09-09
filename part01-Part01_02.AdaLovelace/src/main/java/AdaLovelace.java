@@ -3,17 +3,6 @@
  *
  * Lesson: https://java-programming.mooc.fi/part-1/2-printing/
  *
- * The exercise template has the following boilerplate code:
- *
- * ```java
- * public class AdaLovelace {
- *     public static void main(String[] args) {
- *         // Write your program here
- *
- *     }
- * }
- * ```
- *
  * The line "// Write your program here" is a line comment, and the computer
  * will ignore it when executing the program. Add a new line below the line
  * comment that prints the string "Ada Lovelace" and run the program. The
