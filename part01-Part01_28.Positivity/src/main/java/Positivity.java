@@ -1,3 +1,21 @@
+/*
+ * 28. Positivity
+ *
+ * Lesson: https://java-programming.mooc.fi/part-1/6-conditional-statements/
+ *
+ * Write a program that prompts the user for an integer and informs the user
+ * whether or not it is positive (greater than zero).
+ *
+ * Example run (a > marks a line you type):
+ *     Give a number:
+ *   > 5
+ *     The number is positive.
+ *
+ * Example run:
+ *     Give a number:
+ *   > -2
+ *     The number is not positive.
+ */
 
 import java.util.Scanner;
 

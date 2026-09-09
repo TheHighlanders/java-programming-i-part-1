@@ -1,3 +1,26 @@
+/*
+ * 32. Odd or even
+ *
+ * Lesson: https://java-programming.mooc.fi/part-1/6-conditional-statements/
+ *
+ * Write a program that prompts the user for a number and informs us whether
+ * it is even or odd.
+ *
+ * Example run (a > marks a line you type):
+ *     Give a number:
+ *   > 2
+ *     Number 2 is even.
+ *
+ * Example run:
+ *     Give a number:
+ *   > 7
+ *     Number 7 is odd.
+ *
+ * Hint: The remainder when dividing by 2 tells us whether the number is even
+ * or not. We get the remainder using the `%`-operator. The exercise template
+ * contains additional instructions on how to do the checking using the
+ * remainder.
+ */
 
 import java.util.Scanner;
 

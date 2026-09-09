@@ -1,3 +1,23 @@
+/*
+ * 12. Integer Input
+ *
+ * Lesson: https://java-programming.mooc.fi/part-1/4-variables/
+ *
+ * Write a program that asks the user for a value. The program should then
+ * print the value provided by the user.
+ *
+ * Here's a couple of examples:
+ *
+ * Example run (a > marks a line you type):
+ *     Give a number:
+ *   > 3
+ *     You gave the number 3
+ *
+ * Example run:
+ *     Give a number:
+ *   > 42
+ *     You gave the number 42
+ */
 
 import java.util.Scanner;
 

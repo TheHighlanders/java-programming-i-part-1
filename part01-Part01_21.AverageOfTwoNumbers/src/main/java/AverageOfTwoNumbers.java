@@ -1,3 +1,18 @@
+/*
+ * 21. Average of two numbers
+ *
+ * Lesson: https://java-programming.mooc.fi/part-1/5-calculating/
+ *
+ * Write a program that asks the user for two integers and prints their
+ * average.
+ *
+ * Example run (a > marks a line you type):
+ *     Give the first number:
+ *   > 8
+ *     Give the second number:
+ *   > 2
+ *     The average is 5.0
+ */
 
 import java.util.Scanner;
 

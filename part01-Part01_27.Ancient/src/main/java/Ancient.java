@@ -1,3 +1,21 @@
+/*
+ * 27. Ancient
+ *
+ * Lesson: https://java-programming.mooc.fi/part-1/6-conditional-statements/
+ *
+ * Write a program that prompts the user for a year. If the user inputs a
+ * number that is smaller than 2015, then the program prints the string
+ * "Ancient history!".
+ *
+ * Example run (a > marks a line you type):
+ *     Give a year:
+ *   > 2017
+ *
+ * Example run:
+ *     Give a year:
+ *   > 2013
+ *     Ancient history!
+ */
 
 import java.util.Scanner;
 

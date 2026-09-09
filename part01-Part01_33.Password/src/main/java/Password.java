@@ -1,3 +1,22 @@
+/*
+ * 33. Password
+ *
+ * Lesson: https://java-programming.mooc.fi/part-1/6-conditional-statements/
+ *
+ * Write a program that prompts the user for a password. If the password is
+ * "Caput Draconis" the program prints "Welcome!". Otherwise, the program
+ * prints "Off with you!"
+ *
+ * Example run (a > marks a line you type):
+ *     Password?
+ *   > Wattlebird
+ *     Off with you!
+ *
+ * Example run:
+ *     Password?
+ *   > Caput Draconis
+ *     Welcome!
+ */
 
 import java.util.Scanner;
 

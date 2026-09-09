@@ -1,3 +1,13 @@
+/*
+ * 25. Check Your Indentation
+ *
+ * Lesson: https://java-programming.mooc.fi/part-1/6-conditional-statements/
+ *
+ * The exercise template contains a program demonstrating the use of
+ * conditional statements. It is, however, incorrectly indented.
+ *
+ * Fix the indentation. VS Code can do it for you: press Shift+Alt+F.
+ */
 
 import java.util.Scanner;
 

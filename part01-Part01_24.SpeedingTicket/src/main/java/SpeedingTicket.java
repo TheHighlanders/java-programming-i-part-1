@@ -1,3 +1,20 @@
+/*
+ * 24. Speeding Ticket
+ *
+ * Lesson: https://java-programming.mooc.fi/part-1/6-conditional-statements/
+ *
+ * Write a program that asks the user for an integer and prints the string
+ * "Speeding ticket!" if the input is greater than 120.
+ *
+ * Example run (a > marks a line you type):
+ *     Give speed:
+ *   > 15
+ *
+ * Example run:
+ *     Give speed:
+ *   > 135
+ *     Speeding ticket!
+ */
 
 import java.util.Scanner;
 
