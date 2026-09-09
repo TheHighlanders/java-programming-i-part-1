@@ -1,0 +1,160 @@
+name: Autograding
+
+on:
+  push:
+  workflow_dispatch:
+
+permissions:
+  checks: write
+  actions: read
+  contents: read
+
+jobs:
+  run-autograding-tests:
+    runs-on: ubuntu-latest
+    if: github.actor != 'github-classroom[bot]'
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+          cache: maven
+
+      - name: Warm the Maven cache
+        run: mvn -B -q -DskipTests install
+
+      - name: SpeedingTicket
+        id: ex24
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: SpeedingTicket
+          command: mvn -B -q -pl 'part01-Part01_24.SpeedingTicket' test
+          timeout: 5
+          max-score: 1
+      - name: CheckYourIndentation
+        id: ex25
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: CheckYourIndentation
+          command: mvn -B -q -pl 'part01-Part01_25.CheckYourIndentation' test
+          timeout: 5
+          max-score: 1
+      - name: Orwell
+        id: ex26
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: Orwell
+          command: mvn -B -q -pl 'part01-Part01_26.Orwell' test
+          timeout: 5
+          max-score: 1
+      - name: Ancient
+        id: ex27
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: Ancient
+          command: mvn -B -q -pl 'part01-Part01_27.Ancient' test
+          timeout: 5
+          max-score: 1
+      - name: Positivity
+        id: ex28
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: Positivity
+          command: mvn -B -q -pl 'part01-Part01_28.Positivity' test
+          timeout: 5
+          max-score: 1
+      - name: Adulthood
+        id: ex29
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: Adulthood
+          command: mvn -B -q -pl 'part01-Part01_29.Adulthood' test
+          timeout: 5
+          max-score: 1
+      - name: LargerThanOrEqualTo
+        id: ex30
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: LargerThanOrEqualTo
+          command: mvn -B -q -pl 'part01-Part01_30.LargerThanOrEqualTo' test
+          timeout: 5
+          max-score: 1
+      - name: GradesAndPoints
+        id: ex31
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: GradesAndPoints
+          command: mvn -B -q -pl 'part01-Part01_31.GradesAndPoints' test
+          timeout: 5
+          max-score: 1
+      - name: OddOrEven
+        id: ex32
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: OddOrEven
+          command: mvn -B -q -pl 'part01-Part01_32.OddOrEven' test
+          timeout: 5
+          max-score: 1
+      - name: Password
+        id: ex33
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: Password
+          command: mvn -B -q -pl 'part01-Part01_33.Password' test
+          timeout: 5
+          max-score: 1
+      - name: Same
+        id: ex34
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: Same
+          command: mvn -B -q -pl 'part01-Part01_34.Same' test
+          timeout: 5
+          max-score: 1
+      - name: CheckingTheAge
+        id: ex35
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: CheckingTheAge
+          command: mvn -B -q -pl 'part01-Part01_35.CheckingTheAge' test
+          timeout: 5
+          max-score: 1
+      - name: LeapYear
+        id: ex36
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: LeapYear
+          command: mvn -B -q -pl 'part01-Part01_36.LeapYear' test
+          timeout: 5
+          max-score: 1
+      - name: GiftTax
+        id: ex37
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: GiftTax
+          command: mvn -B -q -pl 'part01-Part01_37.GiftTax' test
+          timeout: 5
+          max-score: 1
+
+      - name: Autograding Reporter
+        uses: classroom-resources/autograding-grading-reporter@v1
+        env:
+          EX24_RESULTS: "${{ steps.ex24.outputs.result }}"
+          EX25_RESULTS: "${{ steps.ex25.outputs.result }}"
+          EX26_RESULTS: "${{ steps.ex26.outputs.result }}"
+          EX27_RESULTS: "${{ steps.ex27.outputs.result }}"
+          EX28_RESULTS: "${{ steps.ex28.outputs.result }}"
+          EX29_RESULTS: "${{ steps.ex29.outputs.result }}"
+          EX30_RESULTS: "${{ steps.ex30.outputs.result }}"
+          EX31_RESULTS: "${{ steps.ex31.outputs.result }}"
+          EX32_RESULTS: "${{ steps.ex32.outputs.result }}"
+          EX33_RESULTS: "${{ steps.ex33.outputs.result }}"
+          EX34_RESULTS: "${{ steps.ex34.outputs.result }}"
+          EX35_RESULTS: "${{ steps.ex35.outputs.result }}"
+          EX36_RESULTS: "${{ steps.ex36.outputs.result }}"
+          EX37_RESULTS: "${{ steps.ex37.outputs.result }}"
+        with:
+          runners: ex24,ex25,ex26,ex27,ex28,ex29,ex30,ex31,ex32,ex33,ex34,ex35,ex36,ex37

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>frc6201</groupId>
+    <artifactId>java-1-part-1-conditionals</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <name>Java 1 - Part 1.6 Conditional statements</name>
+
+    <modules>
+        <module>part01-Part01_24.SpeedingTicket</module>
+        <module>part01-Part01_25.CheckYourIndentation</module>
+        <module>part01-Part01_26.Orwell</module>
+        <module>part01-Part01_27.Ancient</module>
+        <module>part01-Part01_28.Positivity</module>
+        <module>part01-Part01_29.Adulthood</module>
+        <module>part01-Part01_30.LargerThanOrEqualTo</module>
+        <module>part01-Part01_31.GradesAndPoints</module>
+        <module>part01-Part01_32.OddOrEven</module>
+        <module>part01-Part01_33.Password</module>
+        <module>part01-Part01_34.Same</module>
+        <module>part01-Part01_35.CheckingTheAge</module>
+        <module>part01-Part01_36.LeapYear</module>
+        <module>part01-Part01_37.GiftTax</module>
+    </modules>
+</project>
