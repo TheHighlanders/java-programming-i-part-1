@@ -28,12 +28,23 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      # Restore the downloaded libraries from the last run. Saving them is the
+      # last step of the job, because this job normally ends in failure - an
+      # unfinished exercise is a failed test - and setup-java's own cache never
+      # saves in that case, so every run would re-download everything.
+      - name: Restore downloaded libraries
+        id: libs
+        uses: actions/cache/restore@v4
+        with:
+          path: ~/.m2/repository
+          key: m2-${{ hashFiles('**/pom.xml') }}
+          restore-keys: m2-
+
       - name: Set up Java
         uses: actions/setup-java@v4
         with:
           distribution: temurin
           java-version: "17"
-          cache: maven
 
       # Every exercise is tested here, in one go. The steps below only read
       # the results, so they are almost free.
@@ -380,3 +391,10 @@ jobs:
           EX37_RESULTS: "${{ steps.ex37.outputs.result }}"
         with:
           runners: ex01,ex02,ex03,ex04,ex05,ex06,ex07,ex08,ex09,ex10,ex11,ex12,ex13,ex14,ex15,ex16,ex17,ex18,ex19,ex20,ex21,ex22,ex23,ex24,ex25,ex26,ex27,ex28,ex29,ex30,ex31,ex32,ex33,ex34,ex35,ex36,ex37
+
+      - name: Save downloaded libraries
+        if: always() && steps.libs.outputs.cache-hit != 'true'
+        uses: actions/cache/save@v4
+        with:
+          path: ~/.m2/repository
+          key: m2-${{ hashFiles('**/pom.xml') }}
