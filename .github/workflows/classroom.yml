@@ -1,7 +1,13 @@
 name: Autograding
 
+# Only run when code changes. Editing the README or notes costs no CI time.
 on:
   push:
+    paths:
+      - "**.java"
+      - "**/pom.xml"
+      - ".github/workflows/classroom.yml"
+      - ".github/scripts/**"
   workflow_dispatch:
 
 permissions:
@@ -9,318 +15,327 @@ permissions:
   actions: read
   contents: read
 
+# If you push again while a check is still running, drop the old one.
+concurrency:
+  group: autograding-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   run-autograding-tests:
     runs-on: ubuntu-latest
     if: github.actor != 'github-classroom[bot]'
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
 
-      - name: Set up JDK 17
+      - name: Set up Java
         uses: actions/setup-java@v4
         with:
           distribution: temurin
-          java-version: '17'
+          java-version: "17"
           cache: maven
 
-      - name: Warm the Maven cache
-        run: mvn -B -q -DskipTests install
+      # Every exercise is tested here, in one go. The steps below only read
+      # the results, so they are almost free.
+      - name: Run every test once
+        continue-on-error: true
+        run: mvn -B -fae test
 
       - name: "01 Sandbox"
         id: ex01
         uses: classroom-resources/autograding-command-grader@v1
         with:
           test-name: "01 Sandbox"
-          command: mvn -B -q -pl 'part01-Part01_01.Sandbox' test
-          timeout: 5
+          command: .github/scripts/check-exercise.sh part01-Part01_01.Sandbox
+          timeout: 1
           max-score: 1
       - name: "02 Ada Lovelace"
         id: ex02
         uses: classroom-resources/autograding-command-grader@v1
         with:
           test-name: "02 Ada Lovelace"
-          command: mvn -B -q -pl 'part01-Part01_02.AdaLovelace' test
-          timeout: 5
+          command: .github/scripts/check-exercise.sh part01-Part01_02.AdaLovelace
+          timeout: 1
           max-score: 1
       - name: "03 Once Upon a Time"
         id: ex03
         uses: classroom-resources/autograding-command-grader@v1
         with:
           test-name: "03 Once Upon a Time"
-          command: mvn -B -q -pl 'part01-Part01_03.OnceUponATime' test
-          timeout: 5
+          command: .github/scripts/check-exercise.sh part01-Part01_03.OnceUponATime
+          timeout: 1
           max-score: 1
       - name: "04 Dinosaur"
         id: ex04
         uses: classroom-resources/autograding-command-grader@v1
         with:
           test-name: "04 Dinosaur"
-          command: mvn -B -q -pl 'part01-Part01_04.Dinosaur' test
-          timeout: 5
+          command: .github/scripts/check-exercise.sh part01-Part01_04.Dinosaur
+          timeout: 1
           max-score: 1
       - name: "05 Message"
         id: ex05
         uses: classroom-resources/autograding-command-grader@v1
         with:
           test-name: "05 Message"
-          command: mvn -B -q -pl 'part01-Part01_05.Message' test
-          timeout: 5
+          command: .github/scripts/check-exercise.sh part01-Part01_05.Message
+          timeout: 1
           max-score: 1
       - name: "06 Hi Ada Lovelace!"
         id: ex06
         uses: classroom-resources/autograding-command-grader@v1
         with:
           test-name: "06 Hi Ada Lovelace!"
-          command: mvn -B -q -pl 'part01-Part01_06.HiAdaLovelace' test
-          timeout: 5
+          command: .github/scripts/check-exercise.sh part01-Part01_06.HiAdaLovelace
+          timeout: 1
           max-score: 1
       - name: "07 Message Three Times"
         id: ex07
         uses: classroom-resources/autograding-command-grader@v1
         with:
           test-name: "07 Message Three Times"
-          command: mvn -B -q -pl 'part01-Part01_07.MessageThreeTimes' test
-          timeout: 5
+          command: .github/scripts/check-exercise.sh part01-Part01_07.MessageThreeTimes
+          timeout: 1
           max-score: 1
       - name: "08 Greeting"
         id: ex08
         uses: classroom-resources/autograding-command-grader@v1
         with:
           test-name: "08 Greeting"
-          command: mvn -B -q -pl 'part01-Part01_08.Greeting' test
-          timeout: 5
+          command: .github/scripts/check-exercise.sh part01-Part01_08.Greeting
+          timeout: 1
           max-score: 1
       - name: "09 Conversation"
         id: ex09
         uses: classroom-resources/autograding-command-grader@v1
         with:
           test-name: "09 Conversation"
-          command: mvn -B -q -pl 'part01-Part01_09.Conversation' test
-          timeout: 5
+          command: .github/scripts/check-exercise.sh part01-Part01_09.Conversation
+          timeout: 1
           max-score: 1
       - name: "10 Story"
         id: ex10
         uses: classroom-resources/autograding-command-grader@v1
         with:
           test-name: "10 Story"
-          command: mvn -B -q -pl 'part01-Part01_10.Story' test
-          timeout: 5
+          command: .github/scripts/check-exercise.sh part01-Part01_10.Story
+          timeout: 1
           max-score: 1
       - name: "11 Various Variables"
         id: ex11
         uses: classroom-resources/autograding-command-grader@v1
         with:
           test-name: "11 Various Variables"
-          command: mvn -B -q -pl 'part01-Part01_11.VariousVariables' test
-          timeout: 5
+          command: .github/scripts/check-exercise.sh part01-Part01_11.VariousVariables
+          timeout: 1
           max-score: 1
       - name: "12 Integer Input"
         id: ex12
         uses: classroom-resources/autograding-command-grader@v1
         with:
           test-name: "12 Integer Input"
-          command: mvn -B -q -pl 'part01-Part01_12.IntegerInput' test
-          timeout: 5
+          command: .github/scripts/check-exercise.sh part01-Part01_12.IntegerInput
+          timeout: 1
           max-score: 1
       - name: "13 Double Input"
         id: ex13
         uses: classroom-resources/autograding-command-grader@v1
         with:
           test-name: "13 Double Input"
-          command: mvn -B -q -pl 'part01-Part01_13.DoubleInput' test
-          timeout: 5
+          command: .github/scripts/check-exercise.sh part01-Part01_13.DoubleInput
+          timeout: 1
           max-score: 1
       - name: "14 Boolean Input"
         id: ex14
         uses: classroom-resources/autograding-command-grader@v1
         with:
           test-name: "14 Boolean Input"
-          command: mvn -B -q -pl 'part01-Part01_14.BooleanInput' test
-          timeout: 5
+          command: .github/scripts/check-exercise.sh part01-Part01_14.BooleanInput
+          timeout: 1
           max-score: 1
       - name: "15 Different Types of Input"
         id: ex15
         uses: classroom-resources/autograding-command-grader@v1
         with:
           test-name: "15 Different Types of Input"
-          command: mvn -B -q -pl 'part01-Part01_15.DifferentTypesOfInput' test
-          timeout: 5
+          command: .github/scripts/check-exercise.sh part01-Part01_15.DifferentTypesOfInput
+          timeout: 1
           max-score: 1
       - name: "16 Seconds in a day"
         id: ex16
         uses: classroom-resources/autograding-command-grader@v1
         with:
           test-name: "16 Seconds in a day"
-          command: mvn -B -q -pl 'part01-Part01_16.SecondsInADay' test
-          timeout: 5
+          command: .github/scripts/check-exercise.sh part01-Part01_16.SecondsInADay
+          timeout: 1
           max-score: 1
       - name: "17 Sum of two numbers"
         id: ex17
         uses: classroom-resources/autograding-command-grader@v1
         with:
           test-name: "17 Sum of two numbers"
-          command: mvn -B -q -pl 'part01-Part01_17.SumOfTwoNumbers' test
-          timeout: 5
+          command: .github/scripts/check-exercise.sh part01-Part01_17.SumOfTwoNumbers
+          timeout: 1
           max-score: 1
       - name: "18 Sum of three numbers"
         id: ex18
         uses: classroom-resources/autograding-command-grader@v1
         with:
           test-name: "18 Sum of three numbers"
-          command: mvn -B -q -pl 'part01-Part01_18.SumOfThreeNumbers' test
-          timeout: 5
+          command: .github/scripts/check-exercise.sh part01-Part01_18.SumOfThreeNumbers
+          timeout: 1
           max-score: 1
       - name: "19 Addition formula"
         id: ex19
         uses: classroom-resources/autograding-command-grader@v1
         with:
           test-name: "19 Addition formula"
-          command: mvn -B -q -pl 'part01-Part01_19.AdditionFormula' test
-          timeout: 5
+          command: .github/scripts/check-exercise.sh part01-Part01_19.AdditionFormula
+          timeout: 1
           max-score: 1
       - name: "20 Multiplication formula"
         id: ex20
         uses: classroom-resources/autograding-command-grader@v1
         with:
           test-name: "20 Multiplication formula"
-          command: mvn -B -q -pl 'part01-Part01_20.MultiplicationFormula' test
-          timeout: 5
+          command: .github/scripts/check-exercise.sh part01-Part01_20.MultiplicationFormula
+          timeout: 1
           max-score: 1
       - name: "21 Average of two numbers"
         id: ex21
         uses: classroom-resources/autograding-command-grader@v1
         with:
           test-name: "21 Average of two numbers"
-          command: mvn -B -q -pl 'part01-Part01_21.AverageOfTwoNumbers' test
-          timeout: 5
+          command: .github/scripts/check-exercise.sh part01-Part01_21.AverageOfTwoNumbers
+          timeout: 1
           max-score: 1
       - name: "22 Average of three numbers"
         id: ex22
         uses: classroom-resources/autograding-command-grader@v1
         with:
           test-name: "22 Average of three numbers"
-          command: mvn -B -q -pl 'part01-Part01_22.AverageOfThreeNumbers' test
-          timeout: 5
+          command: .github/scripts/check-exercise.sh part01-Part01_22.AverageOfThreeNumbers
+          timeout: 1
           max-score: 1
       - name: "23 Simple calculator"
         id: ex23
         uses: classroom-resources/autograding-command-grader@v1
         with:
           test-name: "23 Simple calculator"
-          command: mvn -B -q -pl 'part01-Part01_23.SimpleCalculator' test
-          timeout: 5
+          command: .github/scripts/check-exercise.sh part01-Part01_23.SimpleCalculator
+          timeout: 1
           max-score: 1
       - name: "24 Speeding Ticket"
         id: ex24
         uses: classroom-resources/autograding-command-grader@v1
         with:
           test-name: "24 Speeding Ticket"
-          command: mvn -B -q -pl 'part01-Part01_24.SpeedingTicket' test
-          timeout: 5
+          command: .github/scripts/check-exercise.sh part01-Part01_24.SpeedingTicket
+          timeout: 1
           max-score: 1
       - name: "25 Check Your Indentation"
         id: ex25
         uses: classroom-resources/autograding-command-grader@v1
         with:
           test-name: "25 Check Your Indentation"
-          command: mvn -B -q -pl 'part01-Part01_25.CheckYourIndentation' test
-          timeout: 5
+          command: .github/scripts/check-exercise.sh part01-Part01_25.CheckYourIndentation
+          timeout: 1
           max-score: 1
       - name: "26 Orwell"
         id: ex26
         uses: classroom-resources/autograding-command-grader@v1
         with:
           test-name: "26 Orwell"
-          command: mvn -B -q -pl 'part01-Part01_26.Orwell' test
-          timeout: 5
+          command: .github/scripts/check-exercise.sh part01-Part01_26.Orwell
+          timeout: 1
           max-score: 1
       - name: "27 Ancient"
         id: ex27
         uses: classroom-resources/autograding-command-grader@v1
         with:
           test-name: "27 Ancient"
-          command: mvn -B -q -pl 'part01-Part01_27.Ancient' test
-          timeout: 5
+          command: .github/scripts/check-exercise.sh part01-Part01_27.Ancient
+          timeout: 1
           max-score: 1
       - name: "28 Positivity"
         id: ex28
         uses: classroom-resources/autograding-command-grader@v1
         with:
           test-name: "28 Positivity"
-          command: mvn -B -q -pl 'part01-Part01_28.Positivity' test
-          timeout: 5
+          command: .github/scripts/check-exercise.sh part01-Part01_28.Positivity
+          timeout: 1
           max-score: 1
       - name: "29 Adulthood"
         id: ex29
         uses: classroom-resources/autograding-command-grader@v1
         with:
           test-name: "29 Adulthood"
-          command: mvn -B -q -pl 'part01-Part01_29.Adulthood' test
-          timeout: 5
+          command: .github/scripts/check-exercise.sh part01-Part01_29.Adulthood
+          timeout: 1
           max-score: 1
       - name: "30 Larger Than or Equal To"
         id: ex30
         uses: classroom-resources/autograding-command-grader@v1
         with:
           test-name: "30 Larger Than or Equal To"
-          command: mvn -B -q -pl 'part01-Part01_30.LargerThanOrEqualTo' test
-          timeout: 5
+          command: .github/scripts/check-exercise.sh part01-Part01_30.LargerThanOrEqualTo
+          timeout: 1
           max-score: 1
       - name: "31 Grades and Points"
         id: ex31
         uses: classroom-resources/autograding-command-grader@v1
         with:
           test-name: "31 Grades and Points"
-          command: mvn -B -q -pl 'part01-Part01_31.GradesAndPoints' test
-          timeout: 5
+          command: .github/scripts/check-exercise.sh part01-Part01_31.GradesAndPoints
+          timeout: 1
           max-score: 1
       - name: "32 Odd or even"
         id: ex32
         uses: classroom-resources/autograding-command-grader@v1
         with:
           test-name: "32 Odd or even"
-          command: mvn -B -q -pl 'part01-Part01_32.OddOrEven' test
-          timeout: 5
+          command: .github/scripts/check-exercise.sh part01-Part01_32.OddOrEven
+          timeout: 1
           max-score: 1
       - name: "33 Password"
         id: ex33
         uses: classroom-resources/autograding-command-grader@v1
         with:
           test-name: "33 Password"
-          command: mvn -B -q -pl 'part01-Part01_33.Password' test
-          timeout: 5
+          command: .github/scripts/check-exercise.sh part01-Part01_33.Password
+          timeout: 1
           max-score: 1
       - name: "34 Same"
         id: ex34
         uses: classroom-resources/autograding-command-grader@v1
         with:
           test-name: "34 Same"
-          command: mvn -B -q -pl 'part01-Part01_34.Same' test
-          timeout: 5
+          command: .github/scripts/check-exercise.sh part01-Part01_34.Same
+          timeout: 1
           max-score: 1
       - name: "35 Checking the age"
         id: ex35
         uses: classroom-resources/autograding-command-grader@v1
         with:
           test-name: "35 Checking the age"
-          command: mvn -B -q -pl 'part01-Part01_35.CheckingTheAge' test
-          timeout: 5
+          command: .github/scripts/check-exercise.sh part01-Part01_35.CheckingTheAge
+          timeout: 1
           max-score: 1
       - name: "36 Leap year"
         id: ex36
         uses: classroom-resources/autograding-command-grader@v1
         with:
           test-name: "36 Leap year"
-          command: mvn -B -q -pl 'part01-Part01_36.LeapYear' test
-          timeout: 5
+          command: .github/scripts/check-exercise.sh part01-Part01_36.LeapYear
+          timeout: 1
           max-score: 1
       - name: "37 Gift tax"
         id: ex37
         uses: classroom-resources/autograding-command-grader@v1
         with:
           test-name: "37 Gift tax"
-          command: mvn -B -q -pl 'part01-Part01_37.GiftTax' test
-          timeout: 5
+          command: .github/scripts/check-exercise.sh part01-Part01_37.GiftTax
+          timeout: 1
           max-score: 1
 
       - name: Autograding Reporter
