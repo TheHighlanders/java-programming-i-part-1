@@ -6,7 +6,7 @@
  * Write a program that prompts the user for a number and informs us whether
  * it is even or odd.
  *
- * Example run (a > marks a line you type):
+ * Example run (you type the lines marked >):
  *     Give a number:
  *   > 2
  *     Number 2 is even.

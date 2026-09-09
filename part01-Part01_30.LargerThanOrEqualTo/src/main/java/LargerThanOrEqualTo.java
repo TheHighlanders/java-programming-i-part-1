@@ -7,7 +7,7 @@
  * larger of the two. If the numbers are the same, then the program informs
  * us about this as well.
  *
- * Example run (a > marks a line you type):
+ * Example run (you type the lines marked >):
  *     Give the first number:
  *   > 5
  *     Give the second number:

@@ -26,7 +26,7 @@
  *
  * Example output for when the user writes "Bye".
  *
- * Example run (a > marks a line you type):
+ * Example run (you type the lines marked >):
  *     Write a message:
  *   > Bye
  *     Bye

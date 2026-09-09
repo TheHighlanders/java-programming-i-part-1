@@ -8,8 +8,8 @@ dir="$1"
 reports=("$dir"/target/surefire-reports/TEST-*.xml)
 
 if [ ! -e "${reports[0]}" ]; then
-  echo "Your code did not compile, so the tests could not run."
-  echo "Look at the 'Run every test once' step above for the error."
+  echo "Your code has an error, so the tests could not run."
+  echo "Open the 'Run every test once' step above to see it."
   exit 1
 fi
 

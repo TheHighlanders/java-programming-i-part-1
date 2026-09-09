@@ -18,7 +18,7 @@
  * | 90-100 | 5           |
  * | > 100  | incredible! |
  *
- * Example run (a > marks a line you type):
+ * Example run (you type the lines marked >):
  *     Give points [0-100]:
  *   > 37
  *     Grade: failed

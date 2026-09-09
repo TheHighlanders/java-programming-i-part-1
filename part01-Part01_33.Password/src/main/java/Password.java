@@ -7,7 +7,7 @@
  * "Caput Draconis" the program prints "Welcome!". Otherwise, the program
  * prints "Off with you!"
  *
- * Example run (a > marks a line you type):
+ * Example run (you type the lines marked >):
  *     Password?
  *   > Wattlebird
  *     Off with you!

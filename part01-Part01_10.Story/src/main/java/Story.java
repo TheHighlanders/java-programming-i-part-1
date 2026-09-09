@@ -15,7 +15,7 @@
  * The output must be as shown below -- note, the name and job depend on the
  * user's input.
  *
- * Example run (a > marks a line you type):
+ * Example run (you type the lines marked >):
  *     I will tell you a story, but I need some information first.
  *     What is the main character called?
  *   > Bob

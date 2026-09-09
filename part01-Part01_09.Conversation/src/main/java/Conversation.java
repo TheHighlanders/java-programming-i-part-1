@@ -5,7 +5,7 @@
  *
  * Write a program that works as follows:
  *
- * Example run (a > marks a line you type):
+ * Example run (you type the lines marked >):
  *     Greetings! How are you doing?
  *   > Good thank you!
  *     Oh, how interesting. Tell me more!

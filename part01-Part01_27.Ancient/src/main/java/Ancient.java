@@ -7,7 +7,7 @@
  * number that is smaller than 2015, then the program prints the string
  * "Ancient history!".
  *
- * Example run (a > marks a line you type):
+ * Example run (you type the lines marked >):
  *     Give a year:
  *   > 2017
  *

@@ -7,7 +7,7 @@
  * the same, then the program prints "Same". Otherwise, it prints
  * "Different".
  *
- * Example run (a > marks a line you type):
+ * Example run (you type the lines marked >):
  *     Enter the first string:
  *   > hello
  *     Enter the second string:

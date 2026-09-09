@@ -8,7 +8,7 @@
  *
  * Example prints for the program can be seen below.
  *
- * Example run (a > marks a line you type):
+ * Example run (you type the lines marked >):
  *     Write something:
  *   > santa does not exist
  *     True or false? false

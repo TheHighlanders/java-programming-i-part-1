@@ -9,7 +9,7 @@
  * For instance, if the entered numbers are 2 and 8, the program should print
  * the following:
  *
- * Example run (a > marks a line you type):
+ * Example run (you type the lines marked >):
  *     Give the first number:
  *   > 2
  *     Give the second number:

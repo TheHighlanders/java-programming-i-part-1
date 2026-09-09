@@ -6,7 +6,7 @@
  * Write a program that asks the user for three integers and prints their
  * average.
  *
- * Example run (a > marks a line you type):
+ * Example run (you type the lines marked >):
  *     Give the first number:
  *   > 8
  *     Give the second number:

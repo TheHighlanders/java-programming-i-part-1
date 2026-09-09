@@ -6,7 +6,7 @@
  * Write a program that prompts the user for their age and tells them whether
  * or not they are an adult (18 years old or older).
  *
- * Example run (a > marks a line you type):
+ * Example run (you type the lines marked >):
  *     How old are you?
  *   > 12
  *     You are not an adult

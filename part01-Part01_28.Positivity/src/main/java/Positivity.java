@@ -6,7 +6,7 @@
  * Write a program that prompts the user for an integer and informs the user
  * whether or not it is positive (greater than zero).
  *
- * Example run (a > marks a line you type):
+ * Example run (you type the lines marked >):
  *     Give a number:
  *   > 5
  *     The number is positive.

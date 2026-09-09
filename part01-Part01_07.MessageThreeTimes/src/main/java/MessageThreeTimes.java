@@ -27,7 +27,7 @@
  *
  * Example output for when the user writes the string "Hi".
  *
- * Example run (a > marks a line you type):
+ * Example run (you type the lines marked >):
  *     Write a message:
  *   > Hi
  *     Hi

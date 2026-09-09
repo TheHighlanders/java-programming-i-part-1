@@ -25,7 +25,7 @@
  *
  * Example output when user gives the name Ada.
  *
- * Example run (a > marks a line you type):
+ * Example run (you type the lines marked >):
  *     What's your name?
  *   > Ada
  *     Hi Ada

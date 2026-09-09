@@ -7,7 +7,7 @@
  * difference, product, and quotient. Two examples of the execution of the
  * program are given below.
  *
- * Example run (a > marks a line you type):
+ * Example run (you type the lines marked >):
  *     Give the first number:
  *   > 8
  *     Give the second number:

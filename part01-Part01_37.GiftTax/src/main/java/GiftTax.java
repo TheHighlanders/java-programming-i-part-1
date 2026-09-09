@@ -29,7 +29,7 @@
  * Write a program that calculates the gift tax for a gift from a close
  * relative or a family member. This is how the program should work:
  *
- * Example run (a > marks a line you type):
+ * Example run (you type the lines marked >):
  *     Value of the gift?
  *   > 3500
  *     No tax!

@@ -8,7 +8,7 @@
  *
  * The program should work like this:
  *
- * Example run (a > marks a line you type):
+ * Example run (you type the lines marked >):
  *     Give the first number:
  *   > 8
  *     Give the second number:

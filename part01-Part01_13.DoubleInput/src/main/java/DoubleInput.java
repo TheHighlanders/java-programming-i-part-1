@@ -8,7 +8,7 @@
  *
  * Example prints for the program can be seen below:
  *
- * Example run (a > marks a line you type):
+ * Example run (you type the lines marked >):
  *     Give a number:
  *   > 3.14
  *     You gave the number 3.14

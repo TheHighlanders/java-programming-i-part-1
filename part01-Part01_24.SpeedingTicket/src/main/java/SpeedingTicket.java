@@ -6,7 +6,7 @@
  * Write a program that asks the user for an integer and prints the string
  * "Speeding ticket!" if the input is greater than 120.
  *
- * Example run (a > marks a line you type):
+ * Example run (you type the lines marked >):
  *     Give speed:
  *   > 15
  *

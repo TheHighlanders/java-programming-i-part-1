@@ -8,7 +8,7 @@
  *
  * Here's a couple of examples:
  *
- * Example run (a > marks a line you type):
+ * Example run (you type the lines marked >):
  *     Give a number:
  *   > 3
  *     You gave the number 3

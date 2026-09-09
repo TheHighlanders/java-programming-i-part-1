@@ -19,7 +19,7 @@
  *
  * Examples of expected output:
  *
- * Example run (a > marks a line you type):
+ * Example run (you type the lines marked >):
  *     How many days would you like to convert to seconds?
  *   > 1
  *     86400
