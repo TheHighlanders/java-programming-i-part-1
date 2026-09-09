@@ -1,123 +1,66 @@
 # Java Programming I — Part 1
 
-All 37 exercises from Part 1 of the University of Helsinki
-[Java Programming I](https://java-programming.mooc.fi/part-1/) MOOC, set up to be
-graded automatically by GitHub Classroom.
+37 exercises from the University of Helsinki's free
+[Java course](https://java-programming.mooc.fi/part-1/).
 
-Read the course material for a section **before** starting its exercises. The
-material explains the concepts and gives the exact wording each program must print:
+Each folder is one exercise. Open its file in `src/main/java` — the exercise and
+a link to the lesson are written at the top.
 
-<https://java-programming.mooc.fi/part-1/>
+## Set up, once
 
-## What to do
+1. Install [VS Code](https://code.visualstudio.com/).
+2. In VS Code, open the Extensions tab and install **Extension Pack for Java**.
+3. Open this folder: **File → Open Folder**.
 
-Each folder is one exercise. Write your solution in the file under `src/main/java/`.
-**Do not edit anything in `src/test/java/`** — those are the grader's tests.
+![Extensions tab, with Extension Pack for Java ready to install](docs/img/1-extension.png)
 
-Commit and push. Every push runs all 37 tests and reports your score — one point per
-exercise — in the Actions tab and back to GitHub Classroom. Push as often as you like;
-there's no penalty for a failing run.
+## Your first exercise
 
-### 1. Getting started with programming
+Start with **02 Ada Lovelace**. It prints one line.
 
-| # | Exercise | File to edit |
-|---|---|---|
-| 01 | Sandbox | `part01-Part01_01.Sandbox/src/main/java/Sandbox.java` |
+1. Open `part01-Part01_02.AdaLovelace/src/main/java/AdaLovelace.java`.
+2. Read the exercise at the top of the file.
 
-### 2. Printing
+   ![AdaLovelace.java open, showing the exercise at the top](docs/img/2-open-file.png)
 
-| # | Exercise | File to edit |
-|---|---|---|
-| 02 | Ada Lovelace | `part01-Part01_02.AdaLovelace/src/main/java/AdaLovelace.java` |
-| 03 | Once Upon a Time | `part01-Part01_03.OnceUponATime/src/main/java/OnceUponATime.java` |
-| 04 | Dinosaur | `part01-Part01_04.Dinosaur/src/main/java/Dinosaur.java` |
+3. Write your line under `// Write your program here`:
 
-### 3. Reading input
+   ```java
+   System.out.println("Ada Lovelace");
+   ```
 
-| # | Exercise | File to edit |
-|---|---|---|
-| 05 | Message | `part01-Part01_05.Message/src/main/java/Message.java` |
-| 06 | Hi Ada Lovelace! | `part01-Part01_06.HiAdaLovelace/src/main/java/HiAdaLovelace.java` |
-| 07 | Message Three Times | `part01-Part01_07.MessageThreeTimes/src/main/java/MessageThreeTimes.java` |
-| 08 | Greeting | `part01-Part01_08.Greeting/src/main/java/Greeting.java` |
-| 09 | Conversation | `part01-Part01_09.Conversation/src/main/java/Conversation.java` |
-| 10 | Story | `part01-Part01_10.Story/src/main/java/Story.java` |
+4. Click **Run**, just above `public static void main`. Your text appears at the
+   bottom of the window.
 
-### 4. Variables
+   ![The Run link above main, and Ada Lovelace printed below](docs/img/3-run.png)
 
-| # | Exercise | File to edit |
-|---|---|---|
-| 11 | Various Variables | `part01-Part01_11.VariousVariables/src/main/java/VariousVariables.java` |
-| 12 | Integer Input | `part01-Part01_12.IntegerInput/src/main/java/IntegerInput.java` |
-| 13 | Double Input | `part01-Part01_13.DoubleInput/src/main/java/DoubleInput.java` |
-| 14 | Boolean Input | `part01-Part01_14.BooleanInput/src/main/java/BooleanInput.java` |
-| 15 | Different Types of Input | `part01-Part01_15.DifferentTypesOfInput/src/main/java/DifferentTypesOfInput.java` |
+5. Check it the way the grader will. Open the Testing tab (the flask on the left)
+   and press play on `AdaLovelaceTest`. Green means done.
 
-### 5. Calculating with numbers
+   ![The Testing tab with AdaLovelaceTest passing](docs/img/4-tests.png)
 
-| # | Exercise | File to edit |
-|---|---|---|
-| 16 | Seconds in a day | `part01-Part01_16.SecondsInADay/src/main/java/SecondsInADay.java` |
-| 17 | Sum of two numbers | `part01-Part01_17.SumOfTwoNumbers/src/main/java/SumOfTwoNumbers.java` |
-| 18 | Sum of three numbers | `part01-Part01_18.SumOfThreeNumbers/src/main/java/SumOfThreeNumbers.java` |
-| 19 | Addition formula | `part01-Part01_19.AdditionFormula/src/main/java/AdditionFormula.java` |
-| 20 | Multiplication formula | `part01-Part01_20.MultiplicationFormula/src/main/java/MultiplicationFormula.java` |
-| 21 | Average of two numbers | `part01-Part01_21.AverageOfTwoNumbers/src/main/java/AverageOfTwoNumbers.java` |
-| 22 | Average of three numbers | `part01-Part01_22.AverageOfThreeNumbers/src/main/java/AverageOfThreeNumbers.java` |
-| 23 | Simple calculator | `part01-Part01_23.SimpleCalculator/src/main/java/SimpleCalculator.java` |
+6. Save, commit, and push.
 
-### 6. Conditional statements
+Then do the rest in order.
 
-| # | Exercise | File to edit |
-|---|---|---|
-| 24 | Speeding Ticket | `part01-Part01_24.SpeedingTicket/src/main/java/SpeedingTicket.java` |
-| 25 | Check Your Indentation | `part01-Part01_25.CheckYourIndentation/src/main/java/CheckYourIndentation.java` |
-| 26 | Orwell | `part01-Part01_26.Orwell/src/main/java/Orwell.java` |
-| 27 | Ancient | `part01-Part01_27.Ancient/src/main/java/Ancient.java` |
-| 28 | Positivity | `part01-Part01_28.Positivity/src/main/java/Positivity.java` |
-| 29 | Adulthood | `part01-Part01_29.Adulthood/src/main/java/Adulthood.java` |
-| 30 | Larger Than or Equal To | `part01-Part01_30.LargerThanOrEqualTo/src/main/java/LargerThanOrEqualTo.java` |
-| 31 | Grades and Points | `part01-Part01_31.GradesAndPoints/src/main/java/GradesAndPoints.java` |
-| 32 | Odd or even | `part01-Part01_32.OddOrEven/src/main/java/OddOrEven.java` |
-| 33 | Password | `part01-Part01_33.Password/src/main/java/Password.java` |
-| 34 | Same | `part01-Part01_34.Same/src/main/java/Same.java` |
-| 35 | Checking the age | `part01-Part01_35.CheckingTheAge/src/main/java/CheckingTheAge.java` |
-| 36 | Leap year | `part01-Part01_36.LeapYear/src/main/java/LeapYear.java` |
-| 37 | Gift tax | `part01-Part01_37.GiftTax/src/main/java/GiftTax.java` |
-## Running the tests yourself
+## Your score
 
-Optional, but a much faster feedback loop than pushing. You need Java 17+ and Maven.
+Every push runs all 37 tests. Your score shows up in the Actions tab.
 
-One exercise — this is the one you'll use most:
+A red ✗ only means some exercises are unfinished, which is normal until the end.
+Open the failing one and read the message — it says what your program did wrong.
 
-```bash
-mvn -pl part01-Part01_24.SpeedingTicket test
-```
+Two exercises have no real test and always pass: **01 Sandbox**, which is a
+scratch file for trying things out, and **25 Check Your Indentation**.
 
-Everything at once:
+## Stuck?
 
-```bash
-mvn -fae test
-```
+Read the lesson linked at the top of the file. Then ask in the team chat.
 
-When a test fails it tells you what it expected, for example
-`You did not ask user for the speed!`
+## Credits
 
-## Two exercises that always pass
-
-**01 Sandbox** is a scratch file for trying things out, and **25 Check Your
-Indentation** is graded on how the source is indented — which the MOOC's own server
-checked with a tool this setup does not run. Both have empty tests, so they score a
-free point. Do 25 anyway; the point of it is that badly indented code is hard to read.
-
-The other 35 are really graded.
-
-## Credits and licence
-
-Exercise templates and tests are the unmodified originals from the University of
-Helsinki's [Java Programming I](https://java-programming.mooc.fi/) MOOC, created by the
-[Agile Education Research group](https://www.helsinki.fi/en/researchgroups/data-driven-education).
-
-The course material is licensed
-[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/), and this
-adaptation is distributed under the same licence.
+Exercises and tests are from the University of Helsinki's
+[Java Programming I](https://java-programming.mooc.fi/), by the
+[Agile Education Research group](https://www.helsinki.fi/en/researchgroups/data-driven-education),
+used under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/).
+See [LICENSE.md](LICENSE.md).
